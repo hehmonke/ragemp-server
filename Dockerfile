@@ -22,6 +22,7 @@ COPY entrypoint-null.sh /ragemp/entrypoint-null.sh
 COPY conf.json /ragemp/conf-placeholders.json
 
 RUN chmod +x /ragemp/ragemp-server && \
+    chmod +x /ragemp/setup-conf.sh && \
     chmod +x /ragemp/entrypoint.sh && \
     chmod +x /ragemp/entrypoint-null.sh
 
