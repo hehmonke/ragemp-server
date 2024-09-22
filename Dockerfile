@@ -1,4 +1,5 @@
 FROM debian:bookworm-slim
+LABEL org.opencontainers.image.description="RageMp Server in Docker"
 
 # Expose Ports
 EXPOSE 22005/udp
@@ -13,7 +14,9 @@ RUN apt update && apt install -y wget libatomic1 procps && \
     ls /tmp && \
     mv -v /tmp/ragemp-srv/* /ragemp/ && \
     ls /ragemp && \
-    rm -rf /tmp && \
+    rm -rf /tmp/ragemp-srv && \
+    rm -rf /tmp/server.tar.gz && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
     chmod +x /ragemp/ragemp-server
 
 COPY entrypoint.sh /ragemp/entrypoint.sh
