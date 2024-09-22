@@ -19,6 +19,7 @@ RUN apt update && apt install -y wget libatomic1 procps && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
     chmod +x /ragemp/ragemp-server
 
+COPY setup-conf.sh /ragemp/setup-conf.sh
 COPY entrypoint.sh /ragemp/entrypoint.sh
 COPY conf.json /ragemp/conf-placeholders.json
 
