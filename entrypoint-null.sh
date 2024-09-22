@@ -2,5 +2,4 @@
 
 ./setup-conf.sh
 echo "Ready"
-cd /ragemp
-./ragemp-server
+tail -f /dev/null

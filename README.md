@@ -13,6 +13,19 @@ A docker container for RAGE Multiplayer
 docker run --name ragemp-server -p 22005:22005/udp -p 22006:22006 ghcr.io/hehmonke/ragemp-server
 ```
 
+## Also you can create container without starting server (example: for debug purposes when you're manually starting server)
+
+```sh
+services:
+  ragemp-server:
+    image: ghcr.io/hehmonke/ragemp-server
+    entrypoint: /ragemp/entrypoint-null.sh
+    restart: unless-stopped
+    ports:
+      - "22005:22005/udp"
+      - "22006:22006/tcp"
+```
+
 ## Variables
 
 The variables have been implemented with default values, so they do not have to be set.
